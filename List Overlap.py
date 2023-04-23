@@ -22,3 +22,18 @@ for number in a:
     else:
         pass
 print(s)
+
+# There is this case where we don't have the exact list but we ask Python to randomly create one and then the same... + common list is sorted.
+
+import random
+a = random.sample(range(1,101),10)
+b = random.sample(range(1,101),17)
+common = list()
+for number in a:
+    if number in b:
+        if number in common:
+            pass
+        else:
+            common.append(number)
+            common.sort()
+            print(ortak)

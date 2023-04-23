@@ -1,24 +1,30 @@
 # https://www.practicepython.org/exercise/2014/12/06/22-read-from-file.html
 # File can be found in link at the website.
 
-file = "names.txt"
-names_dict = dict()
-newlist = list()
-def file_open(file_name):
-    listnames = list()
-    with open(file_name) as open_file:
-        lines = open_file.readlines()
-        for word in lines:
-            name = word.rstrip()
-            listnames.append(name)
-    return listnames
+FILE = "names.txt"
+def openfile(name_of_file):
+    name_list = list()
+    with open(name_of_file) as file_open:
+        lines = file_open.readlines()
+        for i in lines:
+            names = i.rstrip()
+            name_list.append(names)
+        return name_list
 
-newlist = file_open(file)
-for i in newlist:
+
+def main():
+    name_list = openfile(FILE)
+    print(name_list)
+    name_dict = dict()
     count = 1
-    if i in names_dict:
-        names_dict[i] += 1
-    else:
-        names_dict[i] = 1
+    for i in name_list:
+        if i not in name_dict:
+            name_dict[i] = count
+        else:
+            count += 1
+            name_dict[i] = count
 
-print(names_dict)
+    print(name_dict)
+
+if __name__ == "__main__":
+    main()

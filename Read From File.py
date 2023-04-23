@@ -12,3 +12,13 @@ def file_open(file_name):
             name = word.rstrip()
             listnames.append(name)
     return listnames
+
+newlist = file_open(file)
+for i in newlist:
+    count = 1
+    if i in names_dict:
+        names_dict[i] += 1
+    else:
+        names_dict[i] = 1
+
+print(names_dict)

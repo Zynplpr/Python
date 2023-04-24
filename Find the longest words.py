@@ -16,13 +16,11 @@ def main():
     lengthlist = list()
     line_list = read_file(FILE)
     for sentence in line_list:
-        #print(sentence)
-
+        
         for j in sentence:
             l = len(j) , j
-
             lengthlist.append(l)
-    print(type(l))
+
     M = max(lengthlist)
     print(M[1])
 
